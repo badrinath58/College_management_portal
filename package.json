@@ -1,0 +1,15 @@
+{
+  "name": "college-management-portal",
+  "version": "1.0.0",
+  "private": true,
+  "description": "College Student Management Portal - React + Express + MySQL",
+  "scripts": {
+    "install:all": "npm --prefix server install && npm --prefix client install",
+    "db:schema": "mysql -u root -p < database/schema.sql",
+    "db:seed": "mysql -u root -p college_management < database/seed.sql",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "build": "npm --prefix client run build",
+    "verify": "npm --prefix server run verify"
+  }
+}

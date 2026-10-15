@@ -1,0 +1,34 @@
+// The map of the whole API: URL prefix -> router.   Every module has its own routes file.
+const express = require('express');
+const { departmentRoutes, courseRoutes, semesterRoutes, subjectRoutes } = require('./catalogRoutes');
+const { transactionRoutes, receiptRoutes } = require('./transactionRoutes');
+
+const router = express.Router();
+router.use('/auth', require('./authRoutes'));
+router.use('/students', require('./studentRoutes'));
+router.use('/faculty', require('./facultyRoutes'));
+router.use('/departments', departmentRoutes);
+router.use('/courses', courseRoutes);
+router.use('/semesters', semesterRoutes);
+router.use('/subjects', subjectRoutes);
+router.use('/calendar', require('./calendarRoutes'));
+router.use('/attendance', require('./attendanceRoutes'));
+router.use('/backlogs', require('./backlogRoutes'));
+router.use('/books', require('./bookRoutes'));
+router.use('/library', require('./libraryRoutes'));
+router.use('/timetable', require('./timetableRoutes'));
+router.use('/exams', require('./examRoutes'));
+router.use('/hall-ticket', require('./hallTicketRoutes'));
+router.use('/fees', require('./feeRoutes'));
+router.use('/payments', require('./paymentRoutes'));
+router.use('/transactions', transactionRoutes);
+router.use('/receipts', receiptRoutes);
+router.use('/marks', require('./marksRoutes'));
+router.use('/grade-card', require('./gradeCardRoutes'));
+router.use('/hostel', require('./hostelRoutes'));
+router.use('/lesson-plans', require('./lessonPlanRoutes'));
+router.use('/answer-sheets', require('./answerSheetRoutes'));
+router.use('/notifications', require('./notificationRoutes'));
+router.use('/dashboard', require('./dashboardRoutes'));
+router.use('/files', require('./fileRoutes'));
+module.exports = router;
